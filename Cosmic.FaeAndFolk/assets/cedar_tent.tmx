@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="4" height="4" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="1">
+ <tileset firstgid="1" name="cedar_tent" tilewidth="16" tileheight="16" tilecount="16" columns="4">
+  <image source="cedar_tent_summer.png" width="64" height="64"/>
+ </tileset>
+ <layer id="1" name="Buildings" width="4" height="4">
+  <data encoding="csv">
+0,0,0,0,
+0,6,7,0,
+9,10,11,12,
+13,14,15,16
+</data>
+ </layer>
+ <layer id="2" name="Front" width="4" height="4">
+  <data encoding="csv">
+1,2,3,4,
+5,0,0,8,
+0,0,0,0,
+0,0,0,0
+</data>
+ </layer>
+</map>

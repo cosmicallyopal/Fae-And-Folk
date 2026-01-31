@@ -1,0 +1,10 @@
+﻿{
+  "Name": "Cosmic.FaeAndFolk",
+  "Author": "Cosmic",
+  "Version": "1.0.0",
+  "Description": "description here",
+  "UniqueID": "Cosmic.FaeAndFolk",
+  "EntryDll": "Cosmic.FaeAndFolk.dll",
+  "MinimumApiVersion": "3.0.0",
+  "UpdateKeys": [ "Nexus:" ]
+}
