@@ -1,0 +1,14 @@
+{
+    "Name": "[CP]Fae and Folk",
+    "Author": "cosmicopal",
+    "Description": "",
+    "Version": "1.0.0",
+    "UniqueID": "cosmicopal.faeandfolk",
+    "Dependencies":
+    [
+        {
+            "UniqueID": "Pathoschild.ContentPatcher",
+            "MinimumVersion": "2.0.1"
+        }
+    ]
+}
