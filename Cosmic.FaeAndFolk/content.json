@@ -1,0 +1,305 @@
+{
+  "Format": "2.0.0",
+  "ConfigSchema": {
+    "SpawnRateBalance": { "AllowValues": "Scarce, Normal, Abundant", "Default": "Normal" },
+    "MachineSpeed": { "AllowValues": "Normal, Fast, Instant", "Default": "Normal" }
+  },
+  "DynamicTokens": [
+    { "Name": "AltarTime", "Value": "300" },
+    { "Name": "AltarTime", "Value": "150", "When": { "MachineSpeed": "Fast" } },
+    { "Name": "AltarTime", "Value": "10", "When": { "MachineSpeed": "Instant" } },
+    { "Name": "CauldronTime", "Value": "480" },
+    { "Name": "CauldronTime", "Value": "240", "When": { "MachineSpeed": "Fast" } },
+    { "Name": "CauldronTime", "Value": "10", "When": { "MachineSpeed": "Instant" } },
+    { "Name": "Spawn", "Value": "0.15" },
+    { "Name": "Spawn", "Value": "0.05", "When": { "SpawnRateBalance": "Scarce" } },
+    { "Name": "Spawn", "Value": "0.30", "When": { "SpawnRateBalance": "Abundant" } },
+    { "Name": "RareSpawn", "Value": "0.05" },
+    { "Name": "RareSpawn", "Value": "0.01", "When": { "SpawnRateBalance": "Scarce" } },
+    { "Name": "RareSpawn", "Value": "0.10", "When": { "SpawnRateBalance": "Abundant" } }
+  ],
+  "Changes": [
+    // ============================================================
+    // SECTION 1: ASSETS
+    // ============================================================
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/HagStone", "FromFile": "assets/HagStone.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/DowsingRod", "FromFile": "assets/DowsingRod.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/WitchBells", "FromFile": "assets/WitchBells.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/FrogIdol", "FromFile": "assets/Frog.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/GildedPinecone", "FromFile": "assets/GildedPinecone.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/BonePipe", "FromFile": "assets/BonePipe.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/GoldenRing", "FromFile": "assets/GoldenRing.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/HeartStone", "FromFile": "assets/HeartStone.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/FairyPhone", "FromFile": "assets/FairyPhone.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/Cauldron", "FromFile": "assets/Cauldron.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/SpiritAltar", "FromFile": "assets/SpiritAltar.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/RiverOpal", "FromFile": "assets/RiverOpal.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/SeaGlass", "FromFile": "assets/SeaGlass.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/FrostStar", "FromFile": "assets/FrostStar.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/MoonBlossom", "FromFile": "assets/MoonBlossom.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/FloweringCactus", "FromFile": "assets/FloweringCactus.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/BlushBluets", "FromFile": "assets/blush_bluets.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/BrownBonnet", "FromFile": "assets/BrownBonnet.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/VoidRoots", "FromFile": "assets/VoidRoots.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/GloomGourd", "FromFile": "assets/GloomGourd.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/FaeWings", "FromFile": "assets/FairyWings.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/ForestEssence", "FromFile": "assets/ForestEssence.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/MoonLatte", "FromFile": "assets/LunaLatte.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/LunarNectar", "FromFile": "assets/LunarNectar.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/FruitTreeFertilizer", "FromFile": "assets/FruitTreeFertilizer.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/SunBlossom", "FromFile": "assets/SunPetal.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/WeepingBell", "FromFile": "assets/WeepingBell.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/Shimeji", "FromFile": "assets/Shimeji.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/SpiritOrchid", "FromFile": "assets/SpiritOrchid.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/WispDust", "FromFile": "assets/WispDust.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/WispSilk", "FromFile": "assets/WispSilk.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/SolarNectar", "FromFile": "assets/SolarNectar.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/SunTea", "FromFile": "assets/SunTea.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/StarTar", "FromFile": "assets/StarTar.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/HeartFruit", "FromFile": "assets/heart_fruit.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/HeartNut", "FromFile": "assets/heart_nut.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/HeartSapling", "FromFile": "assets/heart_sapling.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/FruitTrees/HeartWillow", "FromFile": "assets/heart_willow_tree.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/CosmicOpal", "FromFile": "assets/CosmicOpal.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/CosmicOpalFragment", "FromFile": "assets/CosmicOpalFragment.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/LuckyAcorn", "FromFile": "assets/LuckyAcorn.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/AmuletOfTheCosmicOpal", "FromFile": "assets/AmuletOfTheCosmicOpal.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/FateTurner", "FromFile": "assets/FateTurner.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/GoldenGeode", "FromFile": "assets/GoldenGeode.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/TreasureTrove", "FromFile": "assets/TreasureTrove.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/ShadowElixir", "FromFile": "assets/ShadowElixir.png" },
+    { "Action": "Load", "Target": "Mods/cosmicopal/Objects/MermaidsTear", "FromFile": "assets/MermaidsTear.png" },
+
+    // NPC Images
+    { "Action": "Load", "Target": "Portraits/Thistle", "FromFile": "assets/portraits_thistle_{{season}}.png" },
+    { "Action": "Load", "Target": "Characters/Thistle", "FromFile": "assets/sprites_thistle_{{season}}.png" },
+    { "Action": "Load", "Target": "Portraits/Sparks", "FromFile": "assets/portraits_sparks.png" },
+    { "Action": "Load", "Target": "Characters/Sparks", "FromFile": "assets/sprites_sparks.png" },
+    { "Action": "Load", "Target": "Portraits/Cedar", "FromFile": "assets/portraits_cedar.png" },
+    { "Action": "Load", "Target": "Characters/Cedar", "FromFile": "assets/sprites_cedar.png" },
+
+    // NPC Data
+    { "Action": "Load", "Target": "Characters/Dialogue/Thistle", "FromFile": "characters/Thistle_dialogue.json" },
+    { "Action": "Load", "Target": "Characters/Dialogue/MarriageDialogueThistle", "FromFile": "characters/Thistle_marriage.json" },
+    { "Action": "Load", "Target": "Characters/schedules/Thistle", "FromFile": "characters/Thistle_schedule.json" },
+    { "Action": "Load", "Target": "Characters/Dialogue/Sparks", "FromFile": "characters/Sparks_dialogue.json" },
+    { "Action": "Load", "Target": "Characters/schedules/Sparks", "FromFile": "characters/Sparks_schedule.json" },
+    { "Action": "Load", "Target": "Characters/Dialogue/Cedar", "FromFile": "characters/Cedar_dialogue.json" },
+    { "Action": "Load", "Target": "Characters/Dialogue/MarriageDialogueCedar", "FromFile": "characters/Cedar_marriage.json" },
+    { "Action": "Load", "Target": "Characters/schedules/Cedar", "FromFile": "characters/Cedar_schedule.json" },
+
+    // ============================================================
+    // SECTION 2: MAPS & LOCATIONS
+    // ============================================================
+    // 1. Load Tilesheets (Images)
+    { "Action": "Load", "Target": "Maps/ThistleTentSheet", "FromFile": "assets/tent_{{season}}.png" },
+    { "Action": "Load", "Target": "Maps/CedarTentSheet", "FromFile": "assets/cedar_tent_{{season}}.png" },
+    { "Action": "Load", "Target": "Maps/SparksShopSheet", "FromFile": "assets/SparksShop.png" },
+
+    // 2. Load Maps
+    { "Action": "Load", "Target": "Maps/ThistleTentMap", "FromFile": "assets/thistle_tent.tmx" },
+    { "Action": "Load", "Target": "Maps/CedarTentMap", "FromFile": "assets/cedar_tent.tmx" },
+
+    // 3. Patch Tents into Forest (Visuals Only)
+    { 
+        "Action": "EditMap", 
+        "Target": "Maps/Forest", 
+        "FromFile": "assets/thistle_tent.tmx", 
+        "ToArea": { "X": 51, "Y": 25, "Width": 4, "Height": 4 }, 
+        "PatchMode": "Overlay",
+        "Tilesheets": [ { "Id": "thistle_tent", "Image": "Maps/ThistleTentSheet" } ]
+    },
+    { 
+        "Action": "EditMap", 
+        "Target": "Maps/Forest", 
+        "FromFile": "assets/cedar_tent.tmx", 
+        "ToArea": { "X": 47, "Y": 25, "Width": 4, "Height": 4 }, 
+        "PatchMode": "Overlay",
+        "Tilesheets": [ { "Id": "cedar_tent", "Image": "Maps/CedarTentSheet" } ]
+    },
+    
+    // 4. PLACE SHOP STALL (Visuals + Collision)
+    {
+        "Action": "EditMap",
+        "Target": "Maps/Forest",
+        "FromFile": "assets/SparksShop.tmx",
+        "ToArea": { "X": 55, "Y": 28, "Width": 1, "Height": 2 }, 
+        "PatchMode": "Overlay",
+        "Tilesheets": [ { "Id": "SparksShop", "Image": "Maps/SparksShopSheet" } ]
+    },
+
+    // 5. ADD SHOP INTERACTION (The Click)
+    {
+        "Action": "EditMap",
+        "Target": "Maps/Forest",
+        "MapTiles": [
+            {
+                "Position": { "X": 55, "Y": 29 }, // Bottom of the stall
+                "Layer": "Buildings",
+                "SetProperties": { "Action": "OpenShop cosmicopal.SparksShop" }
+            }
+        ]
+    },
+
+    // 6. Define Interior Locations
+    { "Action": "EditData", "Target": "Data/Locations", "Entries": { "ThistleTent": { "DisplayName": "Thistle's Tent", "Map": "Maps/ThistleTentInterior" }, "CedarTent": { "DisplayName": "Cedar's Tent", "Map": "Maps/ThistleTentInterior" } } },
+    { "Action": "Load", "Target": "Maps/ThistleTentInterior", "FromFile": "assets/thistle_tent.tmx" },
+
+    // ============================================================
+    // SECTION 3: SPAWNING & SHOPS & MAIL
+    // ============================================================
+    // TRIGGER: Watcher Mail (The Gift System)
+    {
+        "Action": "EditData",
+        "Target": "Data/TriggerActions",
+        "Entries": {
+            "cosmicopal.Trigger.WatcherTools": { 
+                "Id": "cosmicopal.Trigger.WatcherTools", 
+                "Trigger": "DayStarted", 
+                "Condition": "!PLAYER_HAS_MAIL Current cosmicopal.FolkToolsLetter1, PLAYER_STAT Current daysPlayed 2", 
+                "Actions": [ 
+                    "AddMail Current cosmicopal.FolkToolsLetter1", 
+                    "AddMail Current cosmicopal.FolkToolsLetter2", 
+                    "AddMail Current cosmicopal.FolkToolsLetter3" 
+                ] 
+            }
+        }
+    },
+    // DATA: The Letters themselves
+    {
+        "Action": "EditData",
+        "Target": "Data/Mail",
+        "Entries": {
+            "cosmicopal.FolkToolsLetter1": "The air in the valley has grown thick with things unseen. Take this key to open your eyes.^-The Watcher %item object (O)cosmicopal.HagStone 1 %%",
+            "cosmicopal.FolkToolsLetter2": "Nature does not hide its bounty from those who feel its pull.^-The Watcher %item object (O)cosmicopal.DowsingRod 1 %%",
+            "cosmicopal.FolkToolsLetter3": "There are voices on the wind. Let their chime be your shield.^-The Watcher %item object (O)cosmicopal.WitchBells 1 %%"
+        }
+    },
+
+    // LOCATIONS (Artifact Spots / Dig Spots)
+    { "Action": "EditData", "Target": "Data/Locations", "TargetField": [ "Forest", "ArtifactSpots" ], "Entries": { "cosmicopal.HeartStone": { "ItemId": "(O)cosmicopal.HeartStone", "Chance": "{{RareSpawn}}" }, "cosmicopal.HagStone": { "ItemId": "(O)cosmicopal.HagStone", "Chance": "{{RareSpawn}}" }, "cosmicopal.DowsingRod": { "ItemId": "(O)cosmicopal.DowsingRod", "Chance": "{{RareSpawn}}" }, "cosmicopal.WitchBells": { "ItemId": "(O)cosmicopal.WitchBells", "Chance": "{{RareSpawn}}" } } },
+    { "Action": "EditData", "Target": "Data/Locations", "TargetField": [ "Woods", "ArtifactSpots" ], "Entries": { "cosmicopal.HagStone": { "ItemId": "(O)cosmicopal.HagStone", "Chance": "{{RareSpawn}}" }, "cosmicopal.DowsingRod": { "ItemId": "(O)cosmicopal.DowsingRod", "Chance": "{{RareSpawn}}" } } },
+    
+    // Other Spawns (Forage)
+    { "Action": "EditData", "Target": "Data/Locations", "TargetField": [ "Forest", "Forage" ], "Entries": { "cosmicopal.LuckyAcorn": { "ItemId": "(O)cosmicopal.LuckyAcorn", "Chance": "{{Spawn}}" }, "cosmicopal.BrownBonnet": { "ItemId": "(O)cosmicopal.BrownBonnet", "Chance": "{{Spawn}}" }, "cosmicopal.Shimeji": { "ItemId": "(O)cosmicopal.Shimeji", "Chance": "{{Spawn}}" }, "cosmicopal.GildedPinecone": { "ItemId": "(O)cosmicopal.GildedPinecone", "Chance": "{{RareSpawn}}" }, "cosmicopal.FaeWings": { "ItemId": "(O)cosmicopal.FaeWings", "Chance": "{{Spawn}}" } } },
+    { "Action": "EditData", "Target": "Data/Locations", "TargetField": [ "Mountain", "Forage" ], "Entries": { "cosmicopal.BlushBluets": { "ItemId": "(O)cosmicopal.BlushBluets", "Chance": "{{Spawn}}" }, "cosmicopal.WeepingBell": { "ItemId": "(O)cosmicopal.WeepingBell", "Chance": "{{Spawn}}" } } },
+    { "Action": "EditData", "Target": "Data/Locations", "TargetField": [ "Woods", "Forage" ], "Entries": { "cosmicopal.MoonBlossom": { "ItemId": "(O)cosmicopal.MoonBlossom", "Chance": "{{Spawn}}" }, "cosmicopal.SpiritOrchid": { "ItemId": "(O)cosmicopal.SpiritOrchid", "Chance": "{{Spawn}}" }, "cosmicopal.VoidRoots": { "ItemId": "(O)cosmicopal.VoidRoots", "Chance": "{{Spawn}}" }, "cosmicopal.GloomGourd": { "ItemId": "(O)cosmicopal.GloomGourd", "Chance": "{{Spawn}}" } } },
+    { "Action": "EditData", "Target": "Data/Locations", "TargetField": [ "Desert", "Forage" ], "Entries": { "cosmicopal.FloweringCactus": { "ItemId": "(O)cosmicopal.FloweringCactus", "Chance": "{{Spawn}}" }, "cosmicopal.SunBlossom": { "ItemId": "(O)cosmicopal.SunBlossom", "Chance": "{{Spawn}}" } } },
+    
+    // SHOPS
+    {
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "Entries": {
+        "cosmicopal.SparksShop": {
+          "Id": "cosmicopal.SparksShop",
+          "DisplayName": "Sparks' Shiny Collection",
+          "Owners": [ "Sparks" ],
+          "OpenCondition": "TIME 0800 1600, DAY_OF_WEEK Mon Tue Wed Thu Fri", 
+          "ClosedMessage": "Sparks is out collecting shinies right now. Come back later!",
+          "Currency": 0,
+          "Dialogue": "Look what I found! Do you have shinies to trade?",
+          "Items": [
+            { "Id": "HagStone", "ItemId": "(O)cosmicopal.HagStone", "TradeItemId": "(O)cosmicopal.CosmicOpal", "Price": 3 },
+            { "Id": "DowsingRod", "ItemId": "(O)cosmicopal.DowsingRod", "TradeItemId": "(O)cosmicopal.CosmicOpal", "Price": 3 },
+            { "Id": "WitchBells", "ItemId": "(O)cosmicopal.WitchBells", "TradeItemId": "(O)cosmicopal.CosmicOpal", "Price": 5 },
+            { "Id": "BonePipe", "ItemId": "(O)cosmicopal.BonePipe", "TradeItemId": "(O)cosmicopal.CosmicOpal", "Price": 5 },
+            { "Id": "HeartStone", "ItemId": "(O)cosmicopal.HeartStone", "TradeItemId": "(O)cosmicopal.CosmicOpal", "Price": 5 },
+            { "Id": "FrogIdol", "ItemId": "(O)cosmicopal.FrogIdol", "TradeItemId": "(O)cosmicopal.CosmicOpal", "Price": 8 },
+            { "Id": "GildedPinecone", "ItemId": "(O)cosmicopal.GildedPinecone", "TradeItemId": "(O)cosmicopal.CosmicOpal", "Price": 10 },
+            { "Id": "GoldenRing", "ItemId": "(O)cosmicopal.GoldenRing", "TradeItemId": "(O)cosmicopal.CosmicOpal", "Price": 12 },
+            { "Id": "HeartNut", "ItemId": "(O)cosmicopal.HeartNut", "TradeItemId": "(O)cosmicopal.CosmicOpal", "Price": 20 },
+            { "Id": "WispDust", "ItemId": "(O)cosmicopal.WispDust", "TradeItemId": "(O)cosmicopal.CosmicOpal", "Price": 1 },
+            { "Id": "MoonBlossom", "ItemId": "(O)cosmicopal.MoonBlossom", "TradeItemId": "(O)cosmicopal.CosmicOpal", "Price": 2 },
+            { "Id": "SeaGlass", "ItemId": "(O)cosmicopal.SeaGlass", "TradeItemId": "(O)cosmicopal.CosmicOpal", "Price": 2 }
+          ]
+        }
+      }
+    },
+    
+    // FIXED TRIGGERS
+    {
+      "Action": "EditData",
+      "Target": "Data/TriggerActions",
+      "Entries": {
+        "cosmicopal.Use.FrogIdol": { "Id": "cosmicopal.Use.FrogIdol", "Trigger": "spacechase0.SpaceCore_OnItemUsed", "Condition": "InputId (O)cosmicopal.FrogIdol", "Actions": [ "RemoveItem (O)cosmicopal.FrogIdol 1", "AddBuff cosmicopal.Buff.PowerFrogIdol" ] },
+        "cosmicopal.Use.Pinecone": { "Id": "cosmicopal.Use.Pinecone", "Trigger": "spacechase0.SpaceCore_OnItemUsed", "Condition": "InputId (O)cosmicopal.GildedPinecone", "Actions": [ "RemoveItem (O)cosmicopal.GildedPinecone 1", "cosmicopal.AddProfession Gatherer" ] },
+        "cosmicopal.Use.BonePipe": { "Id": "cosmicopal.Use.BonePipe", "Trigger": "spacechase0.SpaceCore_OnItemUsed", "Condition": "InputId (O)cosmicopal.BonePipe", "Actions": [ "RemoveItem (O)cosmicopal.BonePipe 1", "cosmicopal.AddProfession Shepherd", "cosmicopal.AddProfession Coopmaster" ] },
+        "cosmicopal.Use.GoldenRing": { "Id": "cosmicopal.Use.GoldenRing", "Trigger": "spacechase0.SpaceCore_OnItemUsed", "Condition": "InputId (O)cosmicopal.GoldenRing", "Actions": [ "RemoveItem (O)cosmicopal.GoldenRing 1", "AddBuff cosmicopal.Buff.PowerGoldenRing" ] },
+        "cosmicopal.Use.HeartStone": { "Id": "cosmicopal.Use.HeartStone", "Trigger": "spacechase0.SpaceCore_OnItemUsed", "Condition": "InputId (O)cosmicopal.HeartStone", "Actions": [ "RemoveItem (O)cosmicopal.HeartStone 1", "AddBuff cosmicopal.Buff.PowerHeartStone" ] }
+      }
+    },
+    
+    // MACHINES
+    {
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "Entries": {
+        "(BC)Mill": {
+           "OutputRules": [
+               { "Id": "Dust", "Triggers": [ { "RequiredItemId": "(O)cosmicopal.WispDust" } ], "OutputItem": [ { "ItemId": "(O)cosmicopal.WispDust" } ] },
+               { "Id": "FairyDust", "Triggers": [ { "RequiredItemId": "(O)cosmicopal.FaeWings" } ], "OutputItem": [ { "ItemId": "(O)872" } ] }
+           ]
+        },
+        "(BC)cosmicopal.SpiritAltar": {
+           "OutputRules": [
+               { "Id": "Silk", "Triggers": [ { "RequiredItemId": "(O)cosmicopal.WispDust" } ], "OutputItem": [ { "ItemId": "(O)cosmicopal.WispSilk", "MinStack": 1, "MaxStack": 2 } ], "MinutesUntilReady": "{{AltarTime}}" }
+           ]
+        },
+        "(BC)cosmicopal.Cauldron": {
+           "OutputRules": [
+               { "Id": "Moon", "Triggers": [ { "RequiredItemId": "(O)cosmicopal.MoonBlossom" } ], "OutputItem": [ { "ItemId": "(O)cosmicopal.LunarNectar" } ], "MinutesUntilReady": "{{CauldronTime}}" },
+               { "Id": "Sun", "Triggers": [ { "RequiredItemId": "(O)cosmicopal.SunBlossom" } ], "OutputItem": [ { "ItemId": "(O)cosmicopal.SolarNectar" } ], "MinutesUntilReady": "{{CauldronTime}}" },
+               { "Id": "Essence", "Triggers": [ { "RequiredItemId": "(O)cosmicopal.BrownBonnet" } ], "OutputItem": [ { "ItemId": "(O)cosmicopal.ForestEssence" } ], "MinutesUntilReady": "{{CauldronTime}}" },
+               { "Id": "Latte", "Triggers": [ { "RequiredItemId": "(O)cosmicopal.LunarNectar" } ], "OutputItem": [ { "ItemId": "(O)cosmicopal.MoonLatte" } ], "MinutesUntilReady": "{{CauldronTime}}" },
+               { "Id": "Tea", "Triggers": [ { "RequiredItemId": "(O)cosmicopal.SolarNectar" } ], "OutputItem": [ { "ItemId": "(O)cosmicopal.SunTea" } ], "MinutesUntilReady": "{{CauldronTime}}" }
+           ]
+        }
+      }
+    },
+
+    // ============================================================
+    // SECTION 5: EVENTS (Merged Directly)
+    // ============================================================
+    {
+      "Action": "EditData",
+      "Target": "Data/Events/Farm",
+      "Entries": {
+        // Watcher Intro Series (Spring 2, 3, 4)
+        "cosmicopal.Event.Watcher1/y 1/t 600 1000": "music Echos/pause 500/viewport 64 15/addTemporaryActor Thistle 16 16 64 17 2 true/move farmer 0 2 0/speak Thistle \"The land is deep here. You walk on old bones and older magic.\"/addItem (O)cosmicopal.HagStone/speak Thistle \"Keep it close.\"/end",
+        "cosmicopal.Event.Watcher2/y 1/t 600 1000/e cosmicopal.Event.Watcher1": "music Echos/pause 500/viewport 64 15/addTemporaryActor Thistle 16 16 64 17 2 true/move farmer 0 2 0/speak Thistle \"The soil speaks. Do not just take; listen to where the earth gives.\"/addItem (O)cosmicopal.DowsingRod/speak Thistle \"It will point the way.\"/end",
+        "cosmicopal.Event.Watcher3/y 1/t 600 1000/e cosmicopal.Event.Watcher2": "music Echos/pause 500/viewport 64 15/addTemporaryActor Thistle 16 16 64 17 2 true/move farmer 0 2 0/speak Thistle \"This valley is peaceful, but not harmless.\"/addItem (O)cosmicopal.WitchBells/speak Thistle \"Let these ring. They ward off the ill will of the spirits.\"/end",
+        
+        // Marriage Events
+        "cosmicopal.Event.Thistle14/f Thistle 3500": "music Echos/speak Thistle \"Husband. Or Wife. Or Partner. Whatever you are.\"/pause 400/speak Thistle \"I have brewed something special. It took me years to perfect.\"/addItem (O)cosmicopal.ForestEssence/speak Thistle \"Drink this. It is the essence of the forest itself. It will make you strong.\"/addBuff cosmicopal.Buff.ForestEssence/speak Thistle \"Now, let's go check the pumpkins.\"/end",
+        "cosmicopal.Event.Cedar14/f Cedar 3500": "music untitled/speak Cedar \"I walked the perimeter this morning.\"/pause 400/speak Cedar \"Everything is safe. No wolves. No void spirits.\"/emote Cedar 20/speak Cedar \"This is a good life. I never thought I'd stop running.\"/speak Cedar \"Thank you for giving me a home worth guarding.\"/end"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Events/Forest",
+      "Entries": {
+        // CEDAR
+        "cosmicopal.Event.Cedar2/f Cedar 500/t 600 2000": "music untitled/viewport 47 28/move farmer 47 30 0/speak Cedar \"Hold up. I saw you struggling yesterday.\"/pause 400/speak Cedar \"Your form is terrible. You're going to get yourself killed out here.\"/addItem (W)2/speak Cedar \"Take this. It's an old patrol blade. Use the pointy end.\"/end",
+        "cosmicopal.Event.Cedar4/f Cedar 1000/t 600 2000": "music untitled/viewport 47 28/move farmer 47 29 2/speak Cedar \"You're quiet. Good.\"/pause 500/speak Cedar \"Most people talk too much. They scare away the game. They attract the monsters.\"/move Cedar 0 1 2/speak Cedar \"You... you're alright, farmer. You know how to listen to the wind.\"/end",
+        "cosmicopal.Event.Cedar6/f Cedar 1500/t 600 2000": "music musicboxsong/viewport 47 28/move farmer 47 30 0/speak Cedar \"...don't tell anyone you saw this.\"/pause 400/speak Cedar \"I was... fixing Sparks' toy. The kid breaks everything.\"/emote Cedar 40/speak Cedar \"He's all we have left. If anything happened to him... I'd burn this whole valley down.\"/pause 500/speak Cedar \"Forget I said that.\"/end",
+        "cosmicopal.Event.Cedar8/f Cedar 2000/t 600 2000": "music untitled/viewport 47 28/move farmer 47 30 0/speak Cedar \"You've grown strong. I respect that.\"/pause 500/speak Cedar \"I found this in the ruins years ago. A Templar's Blade.\"/speak Cedar \"It is heavy. Honorable.\"/addItem (W)51/speak Cedar \"It belongs to a warrior. It belongs to you.\"/end",
+        "cosmicopal.Event.Cedar10/f Cedar 2500/t 1800 2600": "music Echos/viewport 47 28/move farmer 47 29 2/speak Cedar \"The night is quiet.\"/pause 500/speak Cedar \"I've spent my whole life guarding things. Guarding the camp. Guarding Thistle. Guarding Sparks.\"/move Cedar 0 1 2/faceDirection farmer 0/speak Cedar \"But when I'm with you... I don't feel like a guard dog. I feel like a man.\"/pause 400/speak Cedar \"I want to protect you, not because it's my duty. But because... I love you.\"/emote farmer 20/end",
+        
+        // THISTLE
+        "cosmicopal.Event.Thistle2/f Thistle 500/t 600 2000": "music Echos/viewport 53 29/move farmer 53 31 0/speak Thistle \"Watch your step.\"/pause 300/speak Thistle \"You almost stepped on a Void Root. Very rare. Very deadly.\"/emote Thistle 32/speak Thistle \"You farmers act like you own the earth. You don't. We are just guests here.\"/speak Thistle \"Respect the soil, and maybe it won't eat you.\"/end",
+        "cosmicopal.Event.Thistle4/f Thistle 1000/t 1800 2600": "music Echos/viewport 53 29/move farmer 53 31 0/speak Thistle \"The stars look different here.\"/pause 500/speak Thistle \"Where we came from... the sky was purple. The trees sang songs.\"/speak Thistle \"It is gone now. Burned. We ran, and we ran, until we found this quiet place.\"/speak Thistle \"I miss the singing trees. But your farm... it has a nice quiet to it.\"/end",
+        "cosmicopal.Event.Thistle6/f Thistle 1500/t 600 2000": "music Echos/viewport 53 29/move farmer 51 29 1/speak Thistle \"You are showing promise, farmer.\"/pause 500/speak Thistle \"I think you are ready to brew your own essences.\"/addCraftingRecipe \"Ancient Cauldron\"/speak Thistle \"Do not burn your eyebrows off. That would be unfortunate.\"/end",
+        "cosmicopal.Event.Thistle8/f Thistle 2000/t 600 2000": "music Echos/viewport 53 29/move farmer 51 29 1/speak Thistle \"I have been thinking. About roots. About home.\"/pause 500/speak Thistle \"We lost everything when we fled. Except this.\"/addItem (O)cosmicopal.HeartNut/speak Thistle \"The last Heart Nut. The seed of our survival.\"/speak Thistle \"I trust you with it. Plant it well.\"/end",
+        "cosmicopal.Event.Thistle10/f Thistle 2500/t 600 2000": "music Echos/viewport 53 29/move farmer 51 29 1/speak Thistle \"Farmer. Come here.\"/pause 400/speak Thistle \"I am not good with... soft words. My heart is like a briar patch.\"/move Thistle 1 0 1/speak Thistle \"But you... you have found a way through the thorns.\"/pause 500/speak Thistle \"I do not want to run anymore. I want to stay. With you.\"/emote farmer 20/end",
+        
+        // SPARKS
+        "cosmicopal.Event.Sparks2/f Sparks 500/t 600 2000": "music musicboxsong/viewport 53 29/move farmer 53 31 0/speak Sparks \"Hi friend! Look what I found under my bed!\"/pause 300/speak Sparks \"It glows! Like me!\"/addItem (O)cosmicopal.WispDust/speak Sparks \"Maybe you can use it!\"/end",
+        "cosmicopal.Event.Sparks4/f Sparks 1000/t 600 2000": "music musicboxsong/viewport 53 29/move farmer 53 31 0/speak Sparks \"One! Two! Three!\"/pause 300/speak Sparks \"Oh! You found me! I was playing hide and seek with the ghosts!\"/speak Sparks \"They are shy. But they like you! I can tell!\"/end",
+        "cosmicopal.Event.Sparks6/f Sparks 1500/t 600 2000": "music musicboxsong/viewport 53 29/move farmer 53 31 0/speak Sparks \"Cedar says I shouldn't play with the old stones. But you can!\"/pause 300/speak Sparks \"If you build this, you can make the dust into silk!\"/addCraftingRecipe \"Spirit Altar\"/speak Sparks \"Make the glowy table!\"/end",
+        "cosmicopal.Event.Sparks8/f Sparks 2000/t 600 2000": "music musicboxsong/viewport 53 29/move farmer 53 31 0/speak Sparks \"Hello? Hello? Is it the Fae?\"/pause 400/speak Sparks \"No, it's just me! But I miss my cousins.\"/speak Sparks \"If we build this, maybe we can call them!\"/addCraftingRecipe \"Fairy Phone\"/speak Sparks \"Ring ring!\"/end",
+        "cosmicopal.Event.Sparks10/f Sparks 2500/t 600 2000": "music musicboxsong/viewport 53 29/move farmer 53 31 0/speak Sparks \"You are my bestest friend in the whole wide world!\"/emote Sparks 20/speak Sparks \"Even better than the ghosts! And the ghosts are really cool!\"/speak Sparks \"Promise we'll be friends forever?\"/emote farmer 32/speak Sparks \"Yay!\"/end"
+      }
+    }
+  ]
+}
